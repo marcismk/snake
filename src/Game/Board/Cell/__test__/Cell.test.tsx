@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import { Cell } from "../Cell";
-import { useGameState } from "../../../store";
+import { useGameState } from "@/store";
 
 describe("<Cell />", () => {
   test("render empty cell", () => {
@@ -11,7 +11,7 @@ describe("<Cell />", () => {
   });
 
   test("render cell with head", () => {
-    useGameState.getState().setHeadPosition(1, 1);
+    useGameState.getState().updateHeadPosition(1, 1);
 
     render(<Cell x={11} y={11} />);
 
@@ -27,7 +27,7 @@ describe("<Cell />", () => {
   });
 
   test("render cell with tail", () => {
-    useGameState.getState().setHeadPosition(1, 1);
+    useGameState.getState().updateHeadPosition(1, 1);
 
     render(<Cell x={10} y={10} />);
 

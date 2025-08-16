@@ -2,7 +2,7 @@ import { Board } from "./Board";
 import classes from "./App.module.css";
 import { Header } from "./Header";
 
-function App() {
+function Game() {
   return (
     <div className={classes.container}>
       <Header />
@@ -11,4 +11,4 @@ function App() {
   );
 }
 
-export default App;
+export default Game;

@@ -1,4 +1,4 @@
-import { GAME_CONFIG } from "./config";
+import { GAME_CONFIG } from "@/config";
 import { create } from "zustand";
 
 /**
@@ -30,7 +30,7 @@ interface GameState {
   headPosition: Position;
   snakeTail: Position[];
   foodPosition: Position;
-  setHeadPosition: (x: number, y: number) => Position;
+  updateHeadPosition: (x: number, y: number) => Position;
   increaseScore: (by: number) => void;
   setDirection: (direction: Direction) => void;
   resetGame: () => void;
@@ -46,8 +46,7 @@ export const useGameState = create<GameState>()((set, get) => ({
   headPosition: GAME_CONFIG.initialSnakePosition,
   snakeTail: generateTail(GAME_CONFIG.initialSnakePosition),
   foodPosition: { x: 2, y: 2 },
-  setSnakeLength: () => {},
-  setHeadPosition: (x: number, y: number) => {
+  updateHeadPosition: (x: number, y: number) => {
     const foodPosition = get().foodPosition;
     const tail = get().snakeTail;
     const head = get().headPosition;

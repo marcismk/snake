@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useGameState } from "../../store";
+import { useGameState } from "@/store";
 import classes from "./Cell.module.css";
 import headImage from "./assets/head.svg";
 import tailImage from "./assets/tail.svg";

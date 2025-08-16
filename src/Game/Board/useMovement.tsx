@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useGameState, type Position } from "../store";
+import { useGameState, type Position } from "@/store";
 
 const ARROW_KEYS = {
   Up: "ArrowUp",
@@ -33,7 +33,7 @@ export const useMovement = () => {
           break;
       }
 
-      useGameState.getState().setHeadPosition(newPosition.x, newPosition.y);
+      useGameState.getState().updateHeadPosition(newPosition.x, newPosition.y);
     }
   };
 

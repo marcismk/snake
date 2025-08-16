@@ -1,5 +1,5 @@
-import { Button } from "../../components/Button";
-import { GAME_STATUSES, useGameState } from "../../store";
+import { Button } from "@/components/Button";
+import { GAME_STATUSES, useGameState } from "@/store";
 import classes from "./GameOver.module.css";
 
 export const GameOver = () => {

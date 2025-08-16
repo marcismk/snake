@@ -1,5 +1,5 @@
-import { Button } from "../../components/Button";
-import { useGameState, GAME_STATUSES } from "../../store";
+import { Button } from "@/components/Button";
+import { useGameState, GAME_STATUSES } from "@/store";
 import classes from "./GameStart.module.css";
 
 export const GameStart = () => {

@@ -1,9 +1,9 @@
 import { useMemo } from "react";
+import { GAME_CONFIG } from "@/config";
+import { GAME_STATUSES, useGameState } from "@/store";
 import classes from "./Board.module.css";
 import { Cell } from "./Cell";
-import { GAME_CONFIG } from "../config";
 import { useMovement } from "./useMovement";
-import { GAME_STATUSES, useGameState } from "../store";
 import { GameOver } from "./GameOver";
 import { GameStart } from "./GameStart";
 

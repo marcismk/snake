@@ -1,6 +1,6 @@
-import { useGameState } from "../store";
+import { useGameState } from "@/store";
+import { GAME_CONFIG } from "@/config";
 import classes from "./Header.module.css";
-import { GAME_CONFIG } from "../config";
 
 export const Header = () => {
   const score = useGameState((state) => state.score);
