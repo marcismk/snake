@@ -4,7 +4,6 @@ import classes from "./GameOver.module.css";
 
 export const GameOver = () => {
   const gameStatus = useGameState((state) => state.status);
-  const score = useGameState((state) => state.score);
 
   const resetGame = useGameState((state) => state.resetGame);
 
