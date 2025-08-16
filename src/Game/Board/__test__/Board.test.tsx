@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import { Board } from "../Board";
-import { GAME_CONFIG } from "../../config";
+import { GAME_CONFIG } from "@/config";
 
 describe("<Board />", () => {
   test("render initial board", () => {

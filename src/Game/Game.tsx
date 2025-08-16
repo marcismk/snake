@@ -1,5 +1,5 @@
 import { Board } from "./Board";
-import classes from "./App.module.css";
+import classes from "./Game.module.css";
 import { Header } from "./Header";
 
 function Game() {
