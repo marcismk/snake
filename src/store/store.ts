@@ -33,9 +33,10 @@ interface GameState {
   updateHeadPosition: (x: number, y: number) => Position;
   increaseScore: (by: number) => void;
   setDirection: (direction: Direction) => void;
-  resetGame: () => void;
   setSpeed: (speed: number) => void;
   setStatus: (status: string) => void;
+  startGame: () => void;
+  endGame: (status: string) => void;
 }
 
 export const useGameState = create<GameState>()((set, get) => ({
@@ -102,8 +103,10 @@ export const useGameState = create<GameState>()((set, get) => ({
   setSpeed: (speed: number) => {
     set({ gameSpeed: speed });
   },
-  resetGame: () =>
+  setStatus: (status: string) => set({ status: status }),
+  startGame: () => {
     set(() => ({
+      status: GAME_STATUSES.Playing,
       headPosition: GAME_CONFIG.initialSnakePosition,
       snakeTail: generateTail(GAME_CONFIG.initialSnakePosition),
       foodPosition: calculateNewFoodPosition(
@@ -112,9 +115,13 @@ export const useGameState = create<GameState>()((set, get) => ({
       ),
       score: 0,
       direction: "left",
-      status: GAME_STATUSES.Playing,
-    })),
-  setStatus: (status: string) => set({ status: status }),
+    }));
+  },
+  endGame: (status) => {
+    set(() => ({
+      status,
+    }));
+  },
 }));
 
 /**

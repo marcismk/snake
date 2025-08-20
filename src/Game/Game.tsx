@@ -1,12 +1,11 @@
 import { Board } from "./Board";
-import classes from "./Game.module.css";
-import { Header } from "./Header";
+import { Stats } from "./Stats";
 
 function Game() {
   return (
-    <div className={classes.container}>
-      <Header />
+    <div className="flex gap-2 align-center justify-center h-full">
       <Board />
+      <Stats />
     </div>
   );
 }

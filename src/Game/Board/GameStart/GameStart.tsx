@@ -1,23 +1,22 @@
 import { Button } from "@/components/Button";
-import { useGameState, GAME_STATUSES } from "@/store";
-import classes from "./GameStart.module.css";
+import { GAME_STATUSES, useGameState } from "@/store";
+import { Dialog } from "@/components/Dialog";
 
 export const GameStart = () => {
-  const resetGame = useGameState((state) => state.resetGame);
-  const setGameStatus = useGameState((state) => state.setStatus);
+  const status = useGameState((state) => state.status);
+  const startGame = useGameState((state) => state.startGame);
 
   const handleStartGame = () => {
-    resetGame();
-    setGameStatus(GAME_STATUSES.Playing);
+    startGame();
   };
 
   return (
-    <div className={classes.gameStart}>
-      <h2>Welcome to Snake</h2>
-      <p>Use arrow keys to move the snake.</p>
-      <p>Try to eat the food without hitting the walls or yourself!</p>
-
+    <Dialog title="Welcome" open={status === GAME_STATUSES.Paused}>
+      <p className="text-white">
+        Play classic snake game. Use keyboard arrow keys to turn snake. Avoid
+        walls and yourself and collect food to win.
+      </p>
       <Button onClick={handleStartGame}>Start Game</Button>
-    </div>
+    </Dialog>
   );
 };

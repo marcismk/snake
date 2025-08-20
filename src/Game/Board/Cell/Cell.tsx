@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { useGameState } from "@/store";
-import classes from "./Cell.module.css";
 import headImage from "./assets/head.svg";
 import tailImage from "./assets/tail.svg";
 import foodImage from "./assets/food.svg";
@@ -46,7 +45,10 @@ export const Cell = ({ x, y }: Props) => {
   const headOverlaps = useMemo(() => isHead && isFood, [isHead, isFood]);
 
   return (
-    <div className={classes.cell} data-testid="cell">
+    <div
+      className="grid place-items-center aspect-1/1 w-[40px] bg-neutral-600"
+      data-testid="cell"
+    >
       {isFood && !headOverlaps && (
         <img data-testid="food" src={foodImage} height={25} width={25} />
       )}

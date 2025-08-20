@@ -1,9 +1,0 @@
-
-
-.cell {
-    display: grid;
-    place-items: center;
-    width: 40px;
-    aspect-ratio: 1 / 1;
-    background-color: lightgray;
-}
