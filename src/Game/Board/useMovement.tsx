@@ -16,7 +16,7 @@ export const useMovement = () => {
     if (gameStatus === "playing") {
       const direction = useGameState.getState().direction;
 
-      let newPosition: Position = { x: 0, y: 0 };
+      const newPosition: Position = { x: 0, y: 0 };
 
       switch (direction) {
         case "up":
@@ -70,7 +70,7 @@ export const useMovement = () => {
   useEffect(() => {
     window.addEventListener("keydown", handleMovement);
 
-    let movementInterval = setInterval(handleAutoMovement, gameSpeed);
+    const movementInterval = setInterval(handleAutoMovement, gameSpeed);
 
     return () => {
       window.removeEventListener("keydown", handleMovement);

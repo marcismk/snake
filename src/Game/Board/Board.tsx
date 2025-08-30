@@ -10,7 +10,7 @@ export const Board = () => {
 
   const rows = useMemo(() => {
     return Array.from({ length: GAME_CONFIG.boardSize }, (_, i) => i + 1);
-  }, [GAME_CONFIG.boardSize]);
+  }, []);
 
   const columns = useMemo(() => {
     return [...rows];
